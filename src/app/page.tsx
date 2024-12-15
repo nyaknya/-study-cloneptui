@@ -111,9 +111,19 @@ export default function Home() {
             </div>
           </div>
           <div className="absolute">
-            <img src="/images/circle-big" alt="" />
-            <img src="/images/circle-small" alt="" />
-            <img src="/images/phone.png" alt="" />
+            <Image
+              src="/images/circle-big.svg"
+              alt="큰 원"
+              width={1026}
+              height={1026}
+            />
+            <Image
+              src="/images/circle-small.svg"
+              alt="작은 원"
+              width={800}
+              height={800}
+            />
+            <Image src="/images/phone.png" alt="" width={360} height={728} />
           </div>
         </section>
       </main>
