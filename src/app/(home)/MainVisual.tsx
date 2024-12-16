@@ -103,7 +103,7 @@ export default function MainVisual() {
           </ul>
         </div>
       </div>
-      <div className="absolute xl:w-[1024px] xl:h-[1024px] w-[760px] h-[760px] xl:right-[2%] right-1/2 translate-x-1/2 xl:translate-x-0 bottom-[5%]  -z-10">
+      <div className="absolute xl:w-[1024px] xl:h-[1024px] w-[760px] h-[760px] right-1/2 xl:right-[2%] translate-x-1/2 xl:translate-x-0 bottom-[5%] -z-10">
         <Image
           src="/images/phone.png"
           alt="휴대폰"
