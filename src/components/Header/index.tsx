@@ -3,14 +3,14 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="container max-w-7xl flex justify-between py-8 sm:px-6 lg:px-8 mx-auto">
+    <header className="container max-w-7xl flex justify-between py-8 px-6 lg:px-8 mx-auto">
       <div className="flex gap-14 items-center">
         <h1>
           <Link href="/">
             <Image src="/images/logo.svg" alt="" width={106} height={40} />
           </Link>
         </h1>
-        <nav>
+        <nav className="hidden md:block">
           <ul className="flex gap-12 text-sm text-gray-600">
             <li>
               <Link href="/">Features</Link>
@@ -27,7 +27,7 @@ export default function Header() {
           </ul>
         </nav>
       </div>
-      <div className="text-sm">
+      <div className="text-sm hidden md:block">
         <button className="border hover:border-gray-400 transition-all py-2 px-3 text-gray-600  rounded-md">
           Log in
         </button>
