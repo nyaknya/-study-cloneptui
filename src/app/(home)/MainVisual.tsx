@@ -109,7 +109,7 @@ export default function MainVisual() {
           alt="휴대폰"
           width={360}
           height={728}
-          className="absolute xl:right-[25%] right-1/2 translate-x-1/2 xl:translate-x-0  bottom-0"
+          className="absolute xl:right-[22%] right-1/2 translate-x-1/2 xl:translate-x-0  bottom-0"
         />
         <Image
           src="/images/circle-big.svg"
