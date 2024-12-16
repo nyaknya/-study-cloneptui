@@ -1,3 +1,4 @@
+import { nextui } from "@nextui-org/react";
 import type { Config } from "tailwindcss";
 
 export default {
@@ -10,9 +11,9 @@ export default {
     extend: {
       animation: {
         "spin-slow": "spin 3s linear infinite",
-        "spin-slow-reverse": "spin 3s reverse  infinite",
+        "spin-slow-reverse": "spin 3s reverse infinite",
       },
     },
   },
-  plugins: [],
+  plugins: [nextui()],
 } satisfies Config;
