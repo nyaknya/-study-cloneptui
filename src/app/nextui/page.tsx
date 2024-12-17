@@ -11,7 +11,7 @@ export const animals = [
 export default function NextUIExample() {
   return (
     <div className="flex w-full flex-wrap md:flex-nowrap gap-4">
-      <Select className="max-w-xs" label="Select an animal">
+      <Select className="max-w-xs">
         {animals.map((animal) => (
           <SelectItem key={animal.key} value={animal.key}>
             {animal.label}
