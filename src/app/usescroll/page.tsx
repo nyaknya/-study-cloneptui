@@ -16,7 +16,9 @@ export default function UseScrollExample() {
         style={{ width: scrollPercentage }}
       ></animated.div>
       <div className="h-[2000px] text-center bg-gray-200 flex justify-center items-center">
-        Hello World
+        <animated.div className="fixed left-1/2 top-1/2">
+          {scrollPercentage.to((p) => `${p}`)}
+        </animated.div>
       </div>
     </div>
   );
