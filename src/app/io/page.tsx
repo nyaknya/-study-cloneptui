@@ -1,11 +1,33 @@
 "use client";
 
 import { NextPage } from "next";
-import { useEffect, useRef } from "react";
+import { useInView } from "react-intersection-observer";
+
+const Section: React.FC<{ id: string; bgColor: string }> = ({
+  id,
+  bgColor,
+}) => {
+  const { ref, inView } = useInView({
+    threshold: 0.8,
+    triggerOnce: false,
+  });
+
+  return (
+    <div
+      className={`w-full h-screen flex justify-center items-center text-6xl font-bold ${bgColor}`}
+    >
+      <span
+        ref={ref}
+        className={` transition-all duration-700
+          ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}`}
+      >
+        {id}
+      </span>
+    </div>
+  );
+};
 
 const IO: NextPage = () => {
-  const ref = useRef<HTMLDivElement>(null);
-
   const sections = [
     { id: "Don't", bgColor: "bg-slate-100" },
     { id: "you", bgColor: "bg-slate-200" },
@@ -14,43 +36,10 @@ const IO: NextPage = () => {
     { id: "popus?", bgColor: "bg-slate-500" },
   ];
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("opacity-100", "translate-y-0");
-            entry.target.classList.remove("opacity-0", "translate-y-20");
-          } else {
-            entry.target.classList.add("opacity-0", "translate-y-20");
-            entry.target.classList.remove("opacity-100", "translate-y-0");
-          }
-        });
-      },
-      {
-        threshold: 0.8,
-      }
-    );
-
-    if (ref.current) {
-      const elements = ref.current.querySelectorAll(".observe");
-      elements.forEach((element) => observer.observe(element));
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <div ref={ref}>
-      {sections.map((section) => (
-        <div
-          key={section.id}
-          className={`w-full h-screen flex justify-center items-center text-6xl font-bold ${section.bgColor}`}
-        >
-          <span className="observe opacity-0 translate-y-20 transition-all duration-700">
-            {section.id}
-          </span>
-        </div>
+    <div>
+      {sections.map(({ id, bgColor }) => (
+        <Section key={id} id={id} bgColor={bgColor} />
       ))}
     </div>
   );
