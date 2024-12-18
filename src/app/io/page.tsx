@@ -7,11 +7,11 @@ const IO: NextPage = () => {
   const ref = useRef<HTMLDivElement>(null);
 
   const sections = [
-    { id: "001", bgColor: "bg-slate-100" },
-    { id: "002", bgColor: "bg-slate-200" },
-    { id: "003", bgColor: "bg-slate-300" },
-    { id: "004", bgColor: "bg-slate-400" },
-    { id: "005", bgColor: "bg-slate-500" },
+    { id: "Don't", bgColor: "bg-slate-100" },
+    { id: "you", bgColor: "bg-slate-200" },
+    { id: "just", bgColor: "bg-slate-300" },
+    { id: "hate", bgColor: "bg-slate-400" },
+    { id: "popus?", bgColor: "bg-slate-500" },
   ];
 
   useEffect(() => {
